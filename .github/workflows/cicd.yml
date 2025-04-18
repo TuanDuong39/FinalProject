@@ -9,7 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      MYSQL_URL: "jdbc:mysql://160.191.244.248:3306/project?useSSL=false"
+      MYSQL_URL: "jdbc:mysql://160.191.244.248:3307/market?useSSL=false"
       MYSQL_USER: "root"
       MYSQL_PASSWORD: "123456"
     steps:
