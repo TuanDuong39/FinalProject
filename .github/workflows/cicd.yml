@@ -9,9 +9,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      MYSQL_URL: ${{ secrets.MYSQL_URL }}
-      MYSQL_USER: ${{ secrets.MYSQL_USER }}
-      MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
+      MYSQL_URL: "jdbc:mysql://160.191.244.248:3306/project?useSSL=false"
+      MYSQL_USER: "root"
+      MYSQL_PASSWORD: "123456"
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -30,12 +30,6 @@ jobs:
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-maven-
-
-      - name: Display Environment Variables
-        run: |
-         echo "MYSQL_URL: $MYSQL_URL"
-         echo "MYSQL_USER: $MYSQL_USER"
-         echo "MYSQL_PASSWORD: $MYSQL_PASSWORD"
 
       - name: Build with Maven
         run: mvn clean install -DskipTest
