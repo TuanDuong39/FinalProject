@@ -9,9 +9,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      MYSQL_URL: jdbc:mysql://160.191.244.248:3307/market?useSSL=false
-      MYSQL_USER: root
-      MYSQL_PASSWORD: 123456
+      MYSQL_URL: ${{ secrets.MYSQL_URL }}
+      MYSQL_USER: ${{ secrets.MYSQL_USER }}
+      MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
