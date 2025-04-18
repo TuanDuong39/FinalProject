@@ -31,6 +31,12 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
 
+      - name: Display Environment Variables
+        run: |
+          echo "MYSQL_URL: ${{ env.MYSQL_URL }}"
+          echo "MYSQL_USER: ${{ env.MYSQL_USER }}"
+          echo "MYSQL_PASSWORD: ${{ env.MYSQL_PASSWORD }}"
+
       - name: Build with Maven
         run: mvn clean install -B -DskipTest
 
