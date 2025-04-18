@@ -51,3 +51,4 @@ jobs:
             cd Project/FinalProject
             ./stop.sh
             ./build.sh
+            
