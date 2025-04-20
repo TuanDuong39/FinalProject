@@ -2,6 +2,7 @@ package com.example.market.DTO.Customer;
 
 
 public class CustomerDTO {
+    private int id;
     private String name;
     private String email;
     private String phoneNumber;
@@ -11,7 +12,8 @@ public class CustomerDTO {
 
     }
 
-    public CustomerDTO(String name, String email, String phoneNumber, String address) {
+    public CustomerDTO(int id,String name, String email, String phoneNumber, String address) {
+        this.id = id;
         this.name = name;
         this.email = email;
         this.phoneNumber = phoneNumber;
