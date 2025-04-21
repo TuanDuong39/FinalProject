@@ -42,9 +42,55 @@ public class Staff
     @OneToMany(mappedBy = "staff", cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     private List<Delivery> deliveries;
 
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
 
-//    @Override
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+    public List<Delivery> getDeliveries() {
+        return deliveries;
+    }
+
+    public void setDeliveries(List<Delivery> deliveries) {
+        this.deliveries = deliveries;
+    }
+
+    //    @Override
 //    public String getUsername() {
 //        return email;
 //    }
