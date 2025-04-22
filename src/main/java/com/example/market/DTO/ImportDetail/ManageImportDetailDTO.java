@@ -1,6 +1,7 @@
 package com.example.market.DTO.ImportDetail;
 
 public class ManageImportDetailDTO {
+    private int id;
     private String productName;
     private long importId;
     private int quantity;
@@ -10,11 +11,20 @@ public class ManageImportDetailDTO {
 
     }
 
-    public ManageImportDetailDTO(String productName, long importId, int quantity, int money) {
+    public ManageImportDetailDTO(int id,String productName, long importId, int quantity, int money) {
+        this.id = id;
         this.productName = productName;
         this.importId = importId;
         this.quantity = quantity;
         this.money = money;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getProductName() {

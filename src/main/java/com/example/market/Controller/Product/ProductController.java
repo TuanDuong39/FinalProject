@@ -22,4 +22,6 @@ public class ProductController {
     public List<ManageProductDTO> getProducts() {
         return productService.manageProducts();
     }
+
+
 }

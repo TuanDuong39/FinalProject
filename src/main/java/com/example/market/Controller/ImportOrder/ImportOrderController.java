@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/admin/manageImport")
+@RequestMapping("/admin")
 public class ImportOrderController {
     private ImportService importService;
     @Autowired

@@ -1,6 +1,7 @@
 package com.example.market.DTO.Staff;
 
 public class StaffDTO {
+    private int id;
     private String username;
     private String password;
     private String email;
@@ -10,11 +11,20 @@ public class StaffDTO {
 
     }
 
-    public StaffDTO(String username, String password, String email, String roleName) {
+    public StaffDTO(int id, String username, String password, String email, String roleName) {
+        this.id = id;
         this.username = username;
         this.password = password;
         this.email = email;
         this.roleName = roleName;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getUsername() {

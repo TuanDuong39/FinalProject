@@ -1,6 +1,7 @@
 package com.example.market.DTO.Product;
 
 public class ManageProductDTO {
+    private int id;
     private String name;
     private String unit;
     private int price;
@@ -12,13 +13,22 @@ public class ManageProductDTO {
 
     }
 
-    public ManageProductDTO(String name, String unit, int price, String description, String manufacturer, String categoryName) {
+    public ManageProductDTO(int id,String name, String unit, int price, String description, String manufacturer, String categoryName) {
+        this.id = id;
         this.name = name;
         this.unit = unit;
         this.price = price;
         this.description = description;
         this.manufacturer = manufacturer;
         this.categoryName = categoryName;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
