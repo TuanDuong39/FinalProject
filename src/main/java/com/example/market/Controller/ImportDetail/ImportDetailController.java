@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/admin/manageImport")
+@RequestMapping("/admin")
 public class ImportDetailController {
     private final ImportDetailService importDetailService;
 

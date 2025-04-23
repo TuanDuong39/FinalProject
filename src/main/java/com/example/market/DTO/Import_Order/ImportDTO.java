@@ -6,14 +6,14 @@ public class ImportDTO {
     private long id;
     private LocalDate time;
     private String supplierName;
-    private int total_money;
+    private double total_money;
     private int status;
 
     public ImportDTO() {
 
     }
 
-    public ImportDTO(long id, LocalDate time, String supplierName, int total_money, int status) {
+    public ImportDTO(long id, LocalDate time, String supplierName, double total_money, int status) {
         this.id = id;
         this.time = time;
         this.supplierName = supplierName;
@@ -45,11 +45,11 @@ public class ImportDTO {
         this.supplierName = supplierName;
     }
 
-    public int getTotal_money() {
+    public double getTotal_money() {
         return total_money;
     }
 
-    public void setTotal_money(int total_money) {
+    public void setTotal_money(double total_money) {
         this.total_money = total_money;
     }
 

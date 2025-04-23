@@ -1,5 +1,6 @@
 package com.example.market.Service.Staff;
 
+import com.example.market.DTO.Staff.AddStaffDTO;
 import com.example.market.DTO.Staff.StaffDTO;
 import com.example.market.Entity.Staff;
 import com.example.market.Mapper.Staff.StaffMapper;
@@ -27,8 +28,8 @@ public class StaffService {
     }
 
     @Transactional
-    public void addStaff(StaffDTO staffDTO){
-        Staff staff = staffMapper.mapToEntity(staffDTO);
+    public void addStaff(AddStaffDTO addStaffDTO){
+        Staff staff = staffMapper.mapToEntity(addStaffDTO);
         staffRepo.save(staff);
     }
 

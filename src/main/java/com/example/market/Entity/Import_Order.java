@@ -1,6 +1,7 @@
 package com.example.market.Entity;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -14,6 +15,7 @@ public class Import_Order {
     private long id;
 
     @Column(name = "time")
+    @CreationTimestamp
     private LocalDate time;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -21,7 +23,7 @@ public class Import_Order {
     private Supplier supplier;
 
     @Column(name = "total_money")
-    private int total_money;
+    private double total_money;
 
     @Column(name = "status")
     private int status;
@@ -57,11 +59,11 @@ public class Import_Order {
         this.supplier = supplier;
     }
 
-    public int getTotal_money() {
+    public double getTotal_money() {
         return total_money;
     }
 
-    public void setTotal_money(int total_money) {
+    public void setTotal_money(double total_money) {
         this.total_money = total_money;
     }
 

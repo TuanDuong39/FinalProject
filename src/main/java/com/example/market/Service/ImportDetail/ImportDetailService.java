@@ -66,6 +66,15 @@ public class ImportDetailService {
         importDetail.setProduct(product);
         importDetail.setImportOrder(importOrder);
         importDetailRepo.save(importDetail);
+
+        List<Import_Detail> details = importDetailRepo.findByImportOrderId(importOrder.getId());
+
+        double totalMoney = details.stream()
+                .mapToDouble(d -> d.getQuantity() * d.getMoney())
+                .sum();
+
+        importOrder.setTotal_money(totalMoney);
+        importRepo.save(importOrder);
     }
 
     // update

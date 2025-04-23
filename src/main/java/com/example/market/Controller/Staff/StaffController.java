@@ -1,5 +1,6 @@
 package com.example.market.Controller.Staff;
 
+import com.example.market.DTO.Staff.AddStaffDTO;
 import com.example.market.DTO.Staff.StaffDTO;
 import com.example.market.Service.Staff.StaffService;
 import org.springframework.http.ResponseEntity;
@@ -23,8 +24,8 @@ public class StaffController {
     }
 
     @PostMapping("/addStaff")
-    public ResponseEntity<?> addStaff(@RequestBody StaffDTO staffDTO){
-        staffService.addStaff(staffDTO);
+    public ResponseEntity<?> addStaff(@RequestBody AddStaffDTO addStaffDTO){
+        staffService.addStaff(addStaffDTO);
         return ResponseEntity.ok("Add thành công ");
     }
 
