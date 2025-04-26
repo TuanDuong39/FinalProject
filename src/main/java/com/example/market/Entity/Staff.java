@@ -58,6 +58,23 @@ public class Staff {
         return deliveries;
     }
 
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+
     //        @Override
 //    public String getUsername() {
 //        return email;

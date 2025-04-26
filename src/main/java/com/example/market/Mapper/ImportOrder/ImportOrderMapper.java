@@ -25,6 +25,7 @@ public class ImportOrderMapper {
         importDTO.setTime(import_order.getTime());
         importDTO.setTotal_money(import_order.getTotal_money());
         importDTO.setStatus(import_order.getStatus());
+        importDTO.setId(import_order.getId());
         return importDTO;
     }
 

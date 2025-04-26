@@ -8,17 +8,27 @@ import com.example.market.Repository.StaffRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import com.example.market.Repository.RoleRepo;
+import com.example.market.Entity.Role;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.server.ResponseStatusException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.List;
 
 @Service
 public class StaffService {
     private final StaffMapper staffMapper;
-    private StaffRepo staffRepo;
+    private final StaffRepo staffRepo;
+    private final RoleRepo roleRepo;
+
     @Autowired
-    public StaffService(StaffRepo staffRepo, StaffMapper staffMapper) {
+    private PasswordEncoder passwordEncoder;
+    @Autowired
+    public StaffService(StaffRepo staffRepo, StaffMapper staffMapper, RoleRepo roleRepo) {
         this.staffRepo = staffRepo;
         this.staffMapper = staffMapper;
+        this.roleRepo = roleRepo;
     }
 
     @Transactional
@@ -28,8 +38,19 @@ public class StaffService {
     }
 
     @Transactional
-    public void addStaff(AddStaffDTO addStaffDTO){
-        Staff staff = staffMapper.mapToEntity(addStaffDTO);
+    public void addStaff(AddStaffDTO addStaffDTO) {
+        Staff staff = new Staff();
+        staff.setUsername(addStaffDTO.getUsername());
+        staff.setPassword(passwordEncoder.encode(addStaffDTO.getPassword()));
+        staff.setEmail(addStaffDTO.getEmail());
+
+        Role role = roleRepo.findByRoleName(addStaffDTO.getRoleName())
+                .orElseThrow(() -> new ResponseStatusException(
+                        HttpStatus.BAD_REQUEST, "Role không tồn tại"
+                ));
+
+        staff.setRole(role);
+
         staffRepo.save(staff);
     }
 

@@ -25,6 +25,7 @@ public class StaffMapper {
         StaffDTO staffDTO = new StaffDTO();
         staffDTO.setUsername(staff.getUsername());
         staffDTO.setEmail(staff.getEmail());
+        staffDTO.setId(staff.getId());
 
         if (staff.getRole() != null) {
             staffDTO.setRoleName(staff.getRole().getRoleName());
